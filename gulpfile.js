@@ -1,15 +1,15 @@
-'use strict';
-
 // Directories
-var src = 'src/',
+const
+    src = 'src/',
     dist = 'dist/',
     lib = 'lib/';
 
 // Load gulp
-var gulp = require('gulp');
+const gulp = require('gulp');
 
 // Load other plugins
-var del = require('del'),
+const
+    del = require('del'),
     rename = require('gulp-rename'),
     sass = require('gulp-sass'),
     uglify = require('gulp-uglify'),
@@ -19,7 +19,7 @@ var del = require('del'),
     buffer = require('vinyl-buffer');
 
 // Define CSS task
-gulp.task('styles', function() {
+gulp.task('styles', () => {
     return gulp.src(src + 'scss/main.scss')
         .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
         .pipe(rename({ basename: 'styles' }))
@@ -27,8 +27,8 @@ gulp.task('styles', function() {
 });
 
 // Define JS task
-gulp.task('scripts', function() {
-    var instance = browserify({
+gulp.task('scripts', () => {
+    const instance = browserify({
         entries: src + 'js/main.js',
         debug: true,
         transform: [babelify.configure({
@@ -44,35 +44,35 @@ gulp.task('scripts', function() {
 });
 
 // Define HTML copy task
-gulp.task('copy-html', function() {
+gulp.task('copy-html', () => {
     return gulp.src(src + 'html/**')
         .pipe(gulp.dest(dist));
 });
 
 // Define images copy task
-gulp.task('copy-img', function() {
+gulp.task('copy-img', () => {
     return gulp.src(src + 'img/**/*')
         .pipe(gulp.dest(dist + 'img'));
 });
 
 // Files removed from src/ may still linger in dist/
-gulp.task('clean', function() {
+gulp.task('clean', () => {
     return del([dist + '**']);
 });
 
 // Watcher task
-gulp.task('watch', function() {
+gulp.task('watch', () => {
     gulp.watch(src + 'js/*.js', ['scripts']); // JS
     gulp.watch(src + 'scss/**/*.scss', ['styles']); // CSS
     gulp.watch(src + 'html/*.html', ['copy-html']); // HTML
 });
 
 // Build only
-gulp.task('build', ['clean'], function() {
+gulp.task('build', ['clean'], () => {
     gulp.start('styles', 'scripts', 'copy-html', 'copy-img');
 });
 
 // Default task with watcher
-gulp.task('default', ['clean'], function() {
+gulp.task('default', ['clean'], () => {
     gulp.start('styles', 'scripts', 'copy-html', 'copy-img', 'watch');
 });
