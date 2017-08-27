@@ -55,6 +55,12 @@ gulp.task('copy-img', () => {
         .pipe(gulp.dest(dist + 'img'));
 });
 
+// Define fonts copy task
+gulp.task('copy-fonts', () => {
+    return gulp.src(src + 'fonts/**')
+        .pipe(gulp.dest(dist + 'fonts'));
+});
+
 // Files removed from src/ may still linger in dist/
 gulp.task('clean', () => {
     return del([dist + '**']);
@@ -69,10 +75,10 @@ gulp.task('watch', () => {
 
 // Build only
 gulp.task('build', ['clean'], () => {
-    gulp.start('styles', 'scripts', 'copy-html', 'copy-img');
+    gulp.start('styles', 'scripts', 'copy-html', 'copy-img', 'copy-fonts');
 });
 
 // Default task with watcher
 gulp.task('default', ['clean'], () => {
-    gulp.start('styles', 'scripts', 'copy-html', 'copy-img', 'watch');
+    gulp.start('styles', 'scripts', 'copy-html', 'copy-img', 'copy-fonts', 'watch');
 });
