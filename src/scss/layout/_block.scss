@@ -1,0 +1,121 @@
+.blocks {
+  @include prefix-value(display, box, webkit moz);
+  @include prefix-value(display, flex, webkit moz);
+  display: -ms-flexbox;
+  @include prefix(box-align, stretch, webkit moz);
+  @include prefix(align-items, stretch, webkit moz ms o);
+  -ms-flex-align: center;
+  @include prefix(box-orient, horizontal, webkit moz);
+  @include prefix(box-direction, normal, webkit moz);
+  @include prefix(flex-direction, row, webkit moz ms);
+  @include prefix(box-pack, start, webkit moz);
+  @include prefix(justify-content, flex-start, webkit moz ms o);
+  -ms-flex-pack: start;
+
+  @include respond-to('medium') {
+    @include prefix(box-orient, vertical, webkit moz);
+    @include prefix(box-direction, normal, webkit moz);
+    @include prefix(flex-direction, column, webkit moz ms);
+    height: auto;
+  }
+}
+
+.block {
+  $c: &;
+  width: 50%;
+  height: 100%;
+
+  &--left {
+    text-align: center;
+    overflow: hidden;
+    position: fixed;
+    left: 0;
+    opacity: 0;
+
+    @include respond-to('medium') {
+      background-color: #4DFEEE;
+      width: 100%;
+      height: 70vh;
+      position: relative;
+    }
+
+    & #{$c}__inner {
+      @include prefix-value(display, box, webkit moz);
+      @include prefix-value(display, flex, webkit moz);
+      display: -ms-flexbox;
+      @include prefix(box-align, center, webkit moz);
+      @include prefix(align-items, center, webkit moz ms o);
+      -ms-flex-align: center;
+      @include prefix(box-orient, vertical, webkit moz);
+      @include prefix(box-direction, normal, webkit moz);
+      @include prefix(flex-direction, column, webkit moz ms);
+      @include prefix(box-pack, center, webkit moz);
+      @include prefix(justify-content, center, webkit moz ms o);
+      -ms-flex-pack: center;
+      padding: 2rem;
+
+      @include respond-to('medium') {
+        @include prefix(box-pack, end, webkit moz);
+        @include prefix(justify-content, flex-end, webkit moz ms o);
+        -ms-flex-pack: end;
+      }
+    }
+  }
+
+  &--right {
+    height: auto;
+    position: absolute;
+    right: 0;
+
+    @include respond-to('medium') {
+      width: 100%;
+      height: auto;
+      position: static;
+    }
+  }
+
+  &__bg-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    background-image: url("../img/muhammed.jpg");
+    background-size: cover;
+    background-position: center top;
+    opacity: 0;
+
+    &::before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-color: #2B2B3D;
+      opacity: 0.45;
+      top: 0;
+      left: 0
+    }
+
+    @include respond-to('small') {
+      background-size: 90%;
+      background-position: center bottom;
+    }
+
+    @include respond-to('medium') {
+      background-size: contain;
+      background-repeat: no-repeat;
+      z-index: 0;
+    }
+  }
+
+  &__inner {
+    padding: 5rem;
+    width: 100%;
+    height: 100%;
+
+    @include respond-to('medium') {
+      padding: 2.5rem;
+    }
+  }
+}
