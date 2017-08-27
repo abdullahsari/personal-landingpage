@@ -1,0 +1,19 @@
+/**
+ * Put element off screen
+ */
+.structural {
+  position: absolute;
+  left: -9999px;
+}
+
+/**
+ * Main content container
+ */
+.container {
+  width: 100%;
+  height: 100%;
+
+  @include respond-to('medium') {
+    height: auto;
+  }
+}
