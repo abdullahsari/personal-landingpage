@@ -1,0 +1,49 @@
+.title {
+  overflow: hidden;
+  color: white;
+  line-height: 1.35;
+  font-weight: 500;
+  position: relative;
+  z-index: 1;
+
+  span {
+    opacity: 0;
+    display: block;
+    color: white;
+  }
+
+  em {
+    color: $secondary-color;
+    font-style: normal;
+    position: relative;
+    font-weight: bold;
+  }
+
+  &:nth-child(1) {
+    font-size: 2.4rem;
+
+    @include respond-to('small') {
+      font-size: 1.6rem;
+    }
+
+    @include respond-to('xxl') {
+      font-size: 2.2rem;
+    }
+  }
+
+  &:nth-child(2) {
+    font-size: 2rem;
+    max-width: 40rem;
+    margin: 0.4rem auto 2.8rem;
+
+    @include respond-to('small') {
+      font-size: 1.4rem;
+      max-width: 27rem;
+    }
+
+    @include respond-to('xxl') {
+      font-size: 1.8rem;
+      max-width: 34rem;
+    }
+  }
+}
