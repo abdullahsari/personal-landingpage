@@ -1,0 +1,11 @@
+/// Prefix a property
+/// @author Muhammed Sari
+/// @param {String} $property - Property name
+/// @param {*} $value - Property value
+@mixin prefix($property, $val) {
+  $prefixes: ('webkit', 'moz', 'ms', 'o');
+  @each $prefix in $prefixes {
+    #{'-' + $prefix + '-' + $property}: $val;
+  }
+  #{$property}: $val;
+}
