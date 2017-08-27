@@ -1,0 +1,87 @@
+.content {
+  display: block;
+  opacity: 0;
+  margin: 0 0 6rem;
+
+  &::after {
+    clear: both;
+    content: "";
+    display: table;
+  }
+
+  &:last-child {
+    margin: 0;
+  }
+
+  &--about {
+    p {
+      margin: 0 0 0.8rem;
+    }
+
+    em {
+      color: #BEBECE;
+      font-style: normal;
+      position: relative;
+      padding-left: 1rem;
+
+      &::before {
+        position: absolute;
+        content: "";
+        width: 0.4rem;
+        height: 0.4rem;
+        background-color: $primary-color;
+        left: 0.1rem;
+        top: 0.9rem;
+        border-radius: 50%;
+      }
+    }
+  }
+
+  &__tag-wrapper {
+    float: left;
+    width: 9rem;
+    margin-right: 2.5rem;
+    line-height: 1;
+
+    @include respond-to('large') {
+      display: inline-block;
+      float: none;
+    }
+  }
+
+  &__tag {
+    @include typo(1.2rem, 1.85);
+    @include prefix-value(background-image, linear-gradient(-360deg, $secondary-color 0%, $primary-color 100%), webkit);
+    @include prefix(background-clip, text, webkit);
+    @include prefix(text-fill-color, transparent, webkit);
+    background-color: $secondary-color;
+    color: white;
+    width: auto;
+    padding-right: 0.1rem;
+    margin: 0;
+    text-transform: uppercase;
+    display: inline-block;
+  }
+
+  &__inner {
+    width: 75%;
+    max-width: 54rem;
+    float: left;
+
+    p {
+      @include typo(1.5rem, 1.818);
+      margin: 0;
+    }
+
+    @include respond-to('large') {
+      width: 100%;
+      display: block;
+      float: none;
+    }
+
+    @include respond-to('xl') {
+      width: 100%;
+      max-width: 100%;
+    }
+  }
+}
