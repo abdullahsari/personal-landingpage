@@ -22,3 +22,14 @@
   font-weight: $weight;
   src: url('../fonts/#{$file}.ttf') format("ttf");
 }
+
+/// Media query for given breakpoint
+/// @author Muhammed Sari
+/// @param {String} $breakpoint - The breakpoint
+@mixin respond-to($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    @media screen and (max-width: #{map-get($breakpoints, $breakpoint)}) {
+      @content
+    }
+  }
+}
