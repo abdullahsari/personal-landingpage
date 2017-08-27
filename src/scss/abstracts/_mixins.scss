@@ -9,6 +9,17 @@
   #{$property}: $val;
 }
 
+/// Prefix a value
+/// @author Muhammed Sari
+/// @param {String} $property - Property name
+/// @param {*} $value - Property value
+@mixin prefix-value($property, $val, $prefixes: ()) {
+  @each $prefix in $prefixes {
+    #{$property}: #{'-' + $prefix + '-' + $val};
+  }
+  #{$property}: $val;
+}
+
 /// Font face for TTF
 /// @author Muhammed Sari
 /// @param {String} $name - Font name
