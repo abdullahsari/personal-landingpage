@@ -1,0 +1,20 @@
+/// Font family
+/// @type List
+$font-stack: 'Montserrat', 'Helvetica Neue Light', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif !default;
+
+/// Primary color
+/// @type Color
+$primary-color: #2A54F5 !default;
+
+/// Secondary color
+/// @type Color
+$secondary-color: #3EE6BF !default;
+
+/// Breakpoints map
+/// @prop {String} keys - Keys are identifiers mapped to a given length
+/// @prop {Map} values - Values are actual breakpoints expressed in pixels
+$breakpoints: (
+  'small': 320px,
+  'medium': 768px,
+  'large': 1024px,
+) !default;
