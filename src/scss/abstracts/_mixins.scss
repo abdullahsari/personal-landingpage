@@ -2,8 +2,7 @@
 /// @author Muhammed Sari
 /// @param {String} $property - Property name
 /// @param {*} $value - Property value
-@mixin prefix($property, $val) {
-  $prefixes: ('webkit', 'moz', 'ms', 'o');
+@mixin prefix($property, $val, $prefixes: ()) {
   @each $prefix in $prefixes {
     #{'-' + $prefix + '-' + $property}: $val;
   }
