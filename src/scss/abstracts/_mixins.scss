@@ -9,3 +9,16 @@
   }
   #{$property}: $val;
 }
+
+/// Font face for TTF
+/// @author Muhammed Sari
+/// @param {String} $name - Font name
+/// @param {String} $style - Font style
+/// @param {*} $weight - Font weight
+/// @param {String} $file - Font's file name
+@mixin font-face($name, $style, $weight, $file) {
+  font-family: $name;
+  font-style: $style;
+  font-weight: $weight;
+  src: url('../fonts/#{$file}.ttf') format("ttf");
+}
