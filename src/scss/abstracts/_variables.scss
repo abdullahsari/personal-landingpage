@@ -14,6 +14,10 @@ $primary-color: #2A54F5 !default;
 /// @type Color
 $secondary-color: #3EE6BF !default;
 
+/// Text color
+/// @type Color
+$text-color: #3D3D50 !default;
+
 /// Breakpoints map
 /// @prop {String} keys - Keys are identifiers mapped to a given length
 /// @prop {Map} values - Values are actual breakpoints expressed in pixels
