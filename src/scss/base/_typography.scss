@@ -1,0 +1,35 @@
+body {
+  font-family: $font-stack;
+  color: $text-color;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 1.4rem 0;
+  font-family: $headings-font-stack;
+  font-weight: bold;
+}
+
+h1 {
+  @include typo(4.4rem, 4.84rem);
+}
+
+h2 {
+  @include typo(3.7rem, 4.07rem);
+}
+
+h3 {
+  @include typo(2.7rem, 2.97rem);
+}
+
+h4 {
+  @include typo(2.3rem, 2.53rem);
+}
+
+h5 {
+  @include typo(1.7rem, 1.87rem);
+}
+
+h6 {
+  @include typo(1.4rem, 1.58rem);
+}
+
