@@ -27,6 +27,11 @@
 
   &-content {
     margin-top: 30%;
+
+    @include respond-to('medium') {
+      margin-top: 0;
+      margin-bottom: 30%;
+    }
   }
 
   &--left {
@@ -106,7 +111,6 @@
     }
 
     @include respond-to('small') {
-      background-size: 90%;
       background-position: center bottom;
     }
 
