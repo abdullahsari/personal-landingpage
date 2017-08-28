@@ -13,13 +13,14 @@
     opacity: 1;
 
     &::before {
-      background-color: $secondary-color;
       @include prefix-value(background-image, linear-gradient(-360deg, $secondary-color 0%, $primary-color 100%), webkit);
       @include prefix(transform, scaleX(0), webkit moz ms o);
       @include prefix(transform-origin, center right, webkit moz ms o);
       @include prefix-all(transition, transform 0.15s cubic-bezier(0.445, 0.05, 0.55, 0.95), webkit moz);
       transition-delay: 0.1s;
+      background-color: $secondary-color;
       content: "";
+      position: absolute;
       top: 40%;
       left: 0;
       right: 0;
