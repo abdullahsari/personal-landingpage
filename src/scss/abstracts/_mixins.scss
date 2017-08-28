@@ -42,7 +42,7 @@
   font-family: $name;
   font-style: $style;
   font-weight: $weight;
-  src: url('../fonts/#{$file}.ttf') format("ttf");
+  src: url("../fonts/#{$file}.ttf") format("truetype");
 }
 
 /// Media query for given breakpoint
