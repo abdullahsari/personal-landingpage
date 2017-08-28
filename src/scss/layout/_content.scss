@@ -3,6 +3,10 @@
   opacity: 0;
   margin: 0 0 6rem;
 
+  @include respond-to('medium') {
+    margin: 0 0 3rem;
+  }
+
   &::after {
     clear: both;
     content: "";
