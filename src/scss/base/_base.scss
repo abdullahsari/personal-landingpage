@@ -7,8 +7,13 @@ html {
 
 body {
   background-color: #FFF;
+  overflow-x: hidden;
 }
 
 p {
   margin-bottom: 1.7rem;
+}
+
+a {
+  text-decoration: none;
 }
