@@ -25,6 +25,10 @@
   width: 50%;
   height: 100%;
 
+  &-content {
+    margin-top: 30%;
+  }
+
   &--left {
     text-align: center;
     overflow: hidden;
@@ -65,7 +69,11 @@
   &--right {
     height: auto;
     position: absolute;
-    right: 0;
+    right: 0rem;
+
+    & #{$c}__inner {
+      width: 75%;
+    }
 
     @include respond-to('medium') {
       width: 100%;
@@ -81,7 +89,7 @@
     z-index: -1;
     width: 100%;
     height: 100%;
-    background-image: url("../img/muhammed.jpg");
+    background-image: url("../img/muhammed.png");
     background-size: cover;
     background-position: center top;
     opacity: 0;
