@@ -22,9 +22,9 @@ $text-color: #3D3D50 !default;
 /// @prop {String} keys - Keys are identifiers mapped to a given length
 /// @prop {Map} values - Values are actual breakpoints expressed in pixels
 $breakpoints: (
-  'small': 540px,
-  'medium': 768px,
-  'large': 1024px,
-  'xl': 1140px,
-  'xxl': 1320px
+  'small': 33.75em,
+  'medium': 48em,
+  'large': 64em,
+  'xl': 71.25em,
+  'xxl': 82.5em
 ) !default;
