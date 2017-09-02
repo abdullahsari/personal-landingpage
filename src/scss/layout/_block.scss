@@ -29,6 +29,10 @@
 
   &-content {
     margin-top: 30%;
+
+    @include respond-to('medium') {
+      margin-bottom: 3rem;
+    }
   }
 
   &--left {
@@ -41,7 +45,7 @@
     @include respond-to('medium') {
       background-color: #4DFEEE;
       width: 100%;
-      height: 70vh;
+      height: 50vh;
       position: relative;
     }
 
