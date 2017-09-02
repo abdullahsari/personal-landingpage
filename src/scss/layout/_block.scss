@@ -125,6 +125,7 @@
 
     @include respond-to('medium') {
       padding: 2.5rem;
+      padding-right: 0;
     }
   }
 }
