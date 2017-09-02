@@ -22,12 +22,12 @@
   &:nth-child(1) {
     font-size: 2.4rem;
 
-    @include respond-to('small') {
-      font-size: 1.6rem;
-    }
-
     @include respond-to('xxl') {
       font-size: 2.2rem;
+    }
+
+    @include respond-to('small') {
+      font-size: 1.6rem;
     }
   }
 
@@ -36,14 +36,14 @@
     max-width: 40rem;
     margin: 0.4rem auto 2.8rem;
 
-    @include respond-to('small') {
-      font-size: 1.4rem;
-      max-width: 27rem;
-    }
-
     @include respond-to('xxl') {
       font-size: 1.8rem;
       max-width: 34rem;
+    }
+
+    @include respond-to('small') {
+      font-size: 1.4rem;
+      max-width: 27rem;
     }
   }
 }

@@ -69,7 +69,7 @@
   }
 
   &__inner {
-    max-width: 100%;
+    max-width: 75%;
     width: 54rem;
     float: left;
 
@@ -82,13 +82,13 @@
       }
     }
 
+    @include respond-to('xl') {
+      max-width: 100%;
+    }
+
     @include respond-to('large') {
       display: block;
       float: none;
-    }
-
-    @include respond-to('xl') {
-      max-width: 100%;
     }
   }
 }
