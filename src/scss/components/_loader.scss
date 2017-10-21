@@ -1,0 +1,31 @@
+$size: 8rem;
+$anim: loader-spin;
+
+.loader {
+  border: 2px solid rgba(0, 0, 0, 0.2);
+  border-left-color: $primary-color;
+  @include prefix(animation-name, $anim, webkit moz o);
+  @include prefix(animation-duration, 1s, webkiz moz o);
+  @include prefix(animation-iteration-count, infinite, webkit moz o);
+  @include prefix(animation-timing-function, linear, webkit moz o);
+  @include prefix(transition, opacity 1s, webkit moz o);
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin: -#{$size / 2} 0 0 -#{$size / 2};
+
+  &, &:after {
+    border-radius: 50%;
+    width: $size;
+    height: $size;
+  }
+}
+
+@keyframes #{$anim} {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
