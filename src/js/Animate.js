@@ -24,6 +24,7 @@ export default class Animate {
         this.elements.set('sub', titles[1]);
         this.elements.set('right', document.querySelector('.block--right'));
         this.elements.set('content', document.getElementsByClassName('content'));
+        this.elements.set('body', document.querySelector('body'));
     }
 
     /**
@@ -61,5 +62,6 @@ export default class Animate {
      */
     end() {
         TweenLite.set(this.elements.get('ctaWrapper'), { css: { overflow: 'visible' } });
+        TweenLite.set(this.elements.get('body'), { css: { overflowY: 'visible' } });
     }
 }
