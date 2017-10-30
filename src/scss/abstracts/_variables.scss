@@ -20,7 +20,7 @@ $text-color: #3D3D50 !default;
 
 /// Breakpoints map
 /// @prop {String} keys - Keys are identifiers mapped to a given length
-/// @prop {Map} values - Values are actual breakpoints expressed in pixels
+/// @prop {Map} values - Values are actual breakpoints expressed in em's
 $breakpoints: (
   'small': 33.75em,
   'medium': 48em,
