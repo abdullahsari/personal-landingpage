@@ -9,6 +9,7 @@ body {
   background-color: #FFF;
   overflow-x: hidden;
   overflow-y: hidden;
+  @include prefix(user-select, none, webkit moz ms);
 }
 
 p {
