@@ -11,31 +11,7 @@
     line-height: 1.6;
 
     a {
-      position: relative;
-      overflow: hidden;
-      color: #2B2B3D;
-
-      &::before {
-        @include prefix-value(background-image, linear-gradient(-360deg, $secondary-color 0%, $primary-color 100%), webkit);
-        @include prefix(transform, scaleX(0), webkit moz ms o);
-        @include prefix(transform-origin, center right, webkit moz ms o);
-        @include prefix-all(transition, transform 0.15s cubic-bezier(0.445, 0.05, 0.55, 0.95), webkit moz);
-        transition-delay: 0.1s;
-        background-color: $secondary-color;
-        content: "";
-        position: absolute;
-        top: 50%;
-        left: 0;
-        right: 0;
-        height: 0.2rem;
-        pointer-events: none;
-      }
-
-      &:hover::before {
-        @include prefix(transform, scaleX(1), webkit moz ms o);
-        @include prefix(transform-origin, center left, webkit moz ms o);
-        transition-delay: 0s;
-      }
+      @extend %link-hover;
     }
   }
 
